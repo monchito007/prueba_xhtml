@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+    <head>
+        <title>XHTML prueba</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <!-- Estilos -->
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <!-- Javascript -->
+        <script type="text/javascript">
+            //<![CDATA[
+            // Código JavaScript
+            //]]>
+        </script>
+        
+    </head>
+    <body>
+        
+        <!-- Ejemplo Tabla Compleja -->
+        <table summary="Descripción de la tabla y su contenido">
+            <caption>Título de la tabla</caption>
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Cabecera columna 1</th>
+                    <th scope="col">Cabecera columna 2</th>
+                </tr>
+            </thead>
+
+            <tfoot>
+                <tr>    
+                    <th scope="col"></th>
+                    <th scope="col">Cabecera columna 1</th>
+                    <th scope="col">Cabecera columna 2</th>
+                </tr>
+            </tfoot>
+
+            <tbody>
+                <tr>
+                    <th scope="row">Cabecera fila 1</th>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">Cabecera fila 2</th>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+        <!-- Ejemplo Formulario Complejo -->
+        <form id="identificador" method="post" action="" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>Título del formulario</legend>
+
+                <label for="campo_texto">Campo de texto</label>
+                <input id="campo_texto" name="campo_texto" type="text" maxlength="255" value=""/> 
+
+
+                <label for="campo_areatexto">Area de texto</label>
+                <textarea id="campo_areatexto" name="campo_areatexto" rows="10" cols="50"></textarea>
+
+                <label for="campo_desplegable">Lista desplegable</label>
+                <select id="campo_desplegable" name="campo_desplegable"> 
+                    <option value="0" selected="selected">- selecciona -</option>
+                    <option value="1">Valor 1</option>
+                    <option value="2">Valor 2</option>
+                    <option value="3">Valor 3</option>
+                </select>
+
+                <label for="campo_fichero">Subir un fichero</label>
+                <input id="campo_fichero" name="campo_fichero" type="file" value=""/> 
+
+                <input type="radio" id="valor1" name="campo_radio" value="valor1" checked="checked" />
+                <label for="valor1">Valor 1</label>
+                <input type="radio" id="valor2" name="campo_radio" value="valor2" />
+                <label for="valor2">Valor 2</label>
+
+                <input id="campo_check" name="campo_check" type="checkbox" value="valor1" checked="checked"/>
+                <label for="campo_check">Campo check 1</label>
+
+                <input id="boton_enviar" type="submit" value="Enviar formulario" />
+
+            </fieldset>
+        </form>
+
+        <!-- Ejercicio 4 -->
+        <h2>Características de los planetas</h2>
+ 
+        <pre>
+        ## Nombre      Diametro relativo   Período orbital   Número de lunas
+        Mercurio          0,382            0,24 años            0
+        Venus             0,949            0,62 años            0
+        Tierra            1                1    año             1
+        Marte             0,532            1,88 años            2
+        Júpiter          11,209           11,86 años           49
+        Saturno           9,449           29,46 años           52
+        Urano             4,007           84,01 años           27
+        Neptuno           3,883          164,80 años           13
+        
+        </pre>
+        
+        <!-- Ejercicio 9 -->
+        <h1>Menú</h1>
+ 
+        <ul>
+            <li>Inicio</li>
+            <li>
+                <strong>Noticias</strong>
+                <ul>
+                    <li><a href="#" title="Ver las noticias más recientes">Recientes</a></li>
+                    <li><strong><a href="#" title="Ver las noticias más leídas">Más leídas</a></strong></li>
+                    <li><a href="#" title="Ver las noticias más valoradas">Más valoradas</a></li>
+                </ul>
+            </li>
+            <li>
+                Artículos
+                <ol>
+                    <li><strong>XHTML</strong></li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Otros</li>
+                </ol>
+            </li>
+            <li>
+                Contacto
+                <dl>
+                    <dt><em>Email</em></dt>
+                    <dd><strong>nombre@direccion.com</strong></dd>
+                    <dt><em>Teléfono</em></dt>
+                    <dd>900 900 900</dd>
+                    <dt><em>Fax</em></dt>
+                    <dd>900 900 900</dd>
+                </dl>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Inicio</li>
+            <li>
+                <strong>Noticias</strong>
+                <ul>
+                    <li><a href="#" title="Ver las noticias más recientes">Recientes</a></li>
+                    <li><strong><a href="#" title="Ver las noticias más leídas">Más leídas</a></strong></li>
+                    <li><a href="#" title="Ver las noticias más valoradas">Más valoradas</a></li>
+                </ul>
+            </li>
+            <li>
+                Artículos
+                <ol>
+                    <li><strong>XHTML</strong></li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Otros</li>
+                </ol>
+            </li>
+            <li>
+                Contacto
+                <dl>
+                    <dt><em>Email</em></dt>
+                    <dd><strong>nombre@direccion.com</strong></dd>
+                    <dt><em>Teléfono</em></dt>
+                    <dd>900 900 900</dd>
+                    <dt><em>Fax</em></dt>
+                    <dd>900 900 900</dd>
+                </dl>
+            </li>
+        </ul>
+        
+    </body>
+</html>
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+    <head>
+        <title>XHTML 1.0 Strict</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <!-- Estilos -->
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <!-- Javascript -->
+        <script type="text/javascript">
+            //<![CDATA[
+            // Código JavaScript
+            function valida_formulario(){
+                
+                //Mensaje de retorno
+                var msg = "";
+                
+                // ******************* Validar nombre ******************* 
+                
+                    //Obtenemos el valor del campo nombre
+                    var nombre = document.getElementById("nombre").value;
+                    //Convertimos el nombre a minusculas
+                    nombre = nombre.toLowerCase();
+                
+                    //Comprobar campo vacío
+                    if(nombre.length===0){
+                        msg = msg + "El campo nombre esta vacío.\n";
+                        //alert("entra");
+                    }
+
+                    //Comrpobar que no hayan numeros 
+                    
+                    //Recorremos el nombre
+                    for(var x=0;x<nombre.length;x++){
+                        
+                        //Obtenemos el codigo ascii de la letra
+                        var n_ascii = nombre.charCodeAt(x);
+                        
+                        //El codigo ascii de los numeros de 0-9, van desde 48-57.
+                        if((n_ascii>=48)&&(n_ascii<=57)){
+                            msg = msg + "El campo nombre contiene números.\n";
+                        }
+                        
+                    }
+                    
+                // ******************* Validar Telefono *******************
+                
+                    //Obtenemos el valor del campo telefono.
+                    var telefono = document.getElementById("telefono").value;
+                    
+                    if(telefono.length!==9){
+                        msg = msg + "El telefono debe contener 9 digitos.\n"
+                    }
+                    
+                    //Recorremos el telefono
+                    for(var x=0;x<telefono.length;x++){
+                        
+                        //Obtenemos el digito actual
+                        var digito = telefono.charCodeAt(x);
+                        
+                        //Comprobamos que el primer numero sea 6(ascii 54) o 9(ascii 57).
+                        if(x===0){
+                            if((digito!==54)&&(digito!==57)){
+                                msg = msg + "El telefono debe empezar por 6 o 9.\n";
+                                break;
+                            }
+                        }
+                        
+                        //Comprobamos que todos los campos sean numericos
+                        if((digito<48)||(digito>57)){
+                            msg = msg + "El telefono contiene caraceres no numéricos.\n";
+                            break;
+                        }
+                        
+                    }
+                    
+                // ******************* Validar E-mail *******************
+                
+                    //Obtenemos el valor del campo email.
+                    var email = document.getElementById("email").value;
+                    
+                    //Comprobamos que el campo no esté vacío.
+                    if(email.length===0){
+                        msg = msg + "El campo E-mail está vacío.\n";
+                    }else{
+                        
+                        //Expresión regular para validar correos electrónicos
+                        expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+                        if (!expr.test(email)){
+                            msg = msg + "El correo electrónico no es válido.\n";
+                        }
+                        
+                    }               
+                
+                //Si el mensaje de retorno contiene texto lo mostramos.
+                if(msg.length>0){
+                    alert(msg);
+                    return 0;
+                }else{
+                    
+                    //Enviamos el formulario
+                    document.getElementById("identificador").submit();
+                    
+                }
+                
+                
+                
+            }
+            //]]>
+        </script>
+        
+    </head>
+    <body>
+        
+        <h1>XHTML 1.0 Strict</h1>
+        
+        <!-- Ejemplo Formulario Complejo -->
+        <form id="identificador" method="post" action="obtener_form.php" enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>Formulario de Contacto</legend>
+
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" maxlength="255" value=""/>
+                
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="text" maxlength="255" value=""/> 
+                
+                <label for="telefono">Telefono</label>
+                <input id="telefono" name="telefono" type="text" maxlength="9" value=""/> 
+
+                <input id="boton_enviar" type="button" value="Enviar formulario" onclick="valida_formulario()" />
+
+            </fieldset>
+        </form>        
+        
+    </body>
+</html>
+
